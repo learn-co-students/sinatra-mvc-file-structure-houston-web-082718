@@ -6,6 +6,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-  	erb :index
+    erb :index
   end
+
+  get '/dog' do
+    @dog = Dog.new("rudolph", "mastiff", 2)
+    @dog = Dog.new("sam", "lab", 3)
+    erb :'dog.html'
+  end
+
 end
