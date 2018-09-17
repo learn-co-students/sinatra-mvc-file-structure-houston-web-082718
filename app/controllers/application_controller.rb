@@ -8,4 +8,8 @@ class ApplicationController < Sinatra::Base
   get "/" do
   	erb :index
   end
+
+  get '/dogs/:id' do
+    @dog = Dog.new("rudolph", "mastiff", 2)
+  end
 end
